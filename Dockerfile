@@ -10,7 +10,7 @@ RUN apk add --no-cache \
       spandsp-dev \
       tiff-dev \
       build-base \
-&& wget -P /tmp https://raw.githubusercontent.com/proquar/asterisk-Softmodem/app_softmodem/app_softmodem.c \
+&& wget -P /tmp https://raw.githubusercontent.com/Garamotte/asterisk-Softmodem/app_softmodem/app_softmodem.c \
 && patch /usr/include/spandsp/fir.h < /tmp/fir.h.patch \
 && patch /tmp/app_softmodem.c < /tmp/app_softmodem.c.patch \
 && gcc -shared /tmp/app_softmodem.c -o /tmp/app_softmodem.so -DAST_MODULE_SELF_SYM="__internal_app_softmodem" -lspandsp -fPIC \

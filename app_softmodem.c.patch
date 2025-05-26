@@ -1,17 +1,21 @@
---- app_softmodem.c.orig
-+++ app_softmodem.c
-@@ -15,10 +15,12 @@
- 	 <depend>spandsp</depend>
- 	<support_level>extended</support_level>
- ***/
-+
+commit 77631a1f4238fe2c9e329de8acf9016adf0b03ce
+Author: eigma <eigma@foulab.org>
+Date:   Mon May 26 14:42:36 2025 -0400
+
+    Port forward asterisk-softmodem-docker app_softmodem.c.patch.
+
+diff --git a/app_softmodem.c b/app_softmodem.c
+index e810db5..b40d788 100644
+--- a/app_softmodem.c
++++ b/app_softmodem.c
+@@ -21,6 +21,10 @@
+ /* Needed for spandsp headers */
+ #define ASTMM_LIBC ASTMM_IGNORE
+ 
 +#ifndef AST_MODULE
 +#define AST_MODULE "app_softmodem"
 +#endif
-  
++
  #include "asterisk.h"
--
--ASTERISK_FILE_VERSION(__FILE__, "$Revision$")
  
- #include <string.h>
- #include <stdlib.h>
+ //ASTERISK_FILE_VERSION(__FILE__, "$Revision$")
